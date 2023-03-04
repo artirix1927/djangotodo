@@ -1,0 +1,15 @@
+<div class='modal-content'>
+    <form class="change_task" id='change_task_form' method="post" name="change_task_form" action="{%url 'change_task'%}">
+        {%csrf_token%}
+        {{ form.non_field_errors }}
+        {% for field in form.visible_fields %}
+        {{field.errors}}
+        {{field.label_tag}}<br>{{field}}<br>
+        {% endfor %}
+        {%for field in form.hidden_fields%}
+        <br>{{field}}<br>
+        {%endfor%}
+        <button id="closemodal" class="closemodal">Close</button>
+        <button type="submit" class="savebutton">Save</button>
+    </form>
+</div>

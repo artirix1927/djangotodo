@@ -1,0 +1,260 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: visible;
+    background-image: url("/static/staticimages/bg4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+h1 {
+    color: blue;
+}
+
+.main{
+    display: flex;
+    height: 100%;
+}
+
+/*** Top navbar ***/
+.topnav {
+    background-color: #4e7c90;
+    /* overflow: hidden;  */
+    width: 100%;
+    height: 54px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    /* text-align: center; */
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.logout {
+    margin-left: auto;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #dddddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04aa6d;
+    color: white;
+}
+
+/*** Left menu ***/
+.menu {
+    /* float: left; */
+    background-color: #d5d5d5;
+    height: 100vh;
+    /* position: fixed; */
+    min-width: fit-content;
+}
+
+.menu_list {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.menu_list li {
+    padding: 16px 0px;
+}
+
+.search {
+    width: 70%;
+    min-width:80px;
+    padding: 6px;
+    border: none;
+    font-size: 16px;
+    background-color: #a7a7a7;
+    border-radius: 4px;
+    margin-top: 18px;
+}
+
+.searchimg {
+    display:flex;
+    border:none;
+    background-color: transparent;
+    -webkit-transform: scale(0.3, 0.3);
+    width:10px;
+    height:10px;
+    display: inline;
+    padding: 22px 0px;
+}
+
+.searchform {
+    margin: 70px 50px;
+    flex-direction: row;
+    display: flex;
+}
+
+/*** Tasks and modal ***/
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    margin-top: 54px;
+}
+
+.tasks_list {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0px 0px;
+}
+
+.tasks_list::-webkit-scrollbar{
+    display: none;
+}
+
+.display_tasks {
+    flex-grow: 2;
+    min-width:400px;
+    padding: 0px 0%;
+    z-index: 4;
+}
+
+.tasks_list li {
+    list-style-type: none;
+    padding: 18px 40px 18px 40px;
+    background: #eeeeee;
+    font-size: 16px;
+    border-bottom: 2px solid grey;
+    /* height:108px;
+    width: 1200px; */
+    min-width:200px;
+}
+
+/* Darker background-color on hover */
+.tasks_list li:hover {
+    background: #dddddd;
+}
+
+#loadmore{
+width:100%;
+height: 36px;
+background-color:grey;
+border:none;
+}
+
+.change_starred_state {
+    float: right;
+    margin-right: 4%;
+    width: 24px;
+}
+
+.star {
+    margin-top: -4px;
+    margin-right: 20px;
+}
+
+.delete {
+    float: right;
+    -webkit-transform: scale(0.74, 0.74);
+    margin-right: -24px;
+    margin-top: 50px;
+}
+
+.modal {
+    background-color: #d5d5d5;
+    float: right;
+    position: relative; /*or fixed*/
+    max-width: 562px;
+    z-index: 4;
+}
+
+.modal-content{
+    background-color: #d5d5d5;
+    border: none;
+    padding: 20px 60px;
+    position: fixed;
+    max-width: 560px;
+}
+
+.change_task{
+    display: inline-block;
+}
+
+.hiddeninfo{
+    display: none;
+}
+
+.savebutton{
+    border-radius: 4px;
+    border:none;
+    width: 60px;
+    height: 26px;
+    background-color: #02B865;
+    color: white;
+    padding: 1px 2px;
+    float: right;
+}
+
+.closemodal{
+    border-radius: 4px;
+    border:none;
+    width: 60px;
+    height: 26px;
+    background-color: #FF0734;
+    color: white;
+    padding: 1px 2px;
+    float: left;
+}
+
+#create_task {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius:4px;
+    padding: 10px 40px;
+    background-color: #d5d5d5;
+    max-height:60%;
+    border: 1px solid grey;
+    z-index:120;
+}
+
+#close_create_task_window{
+    margin: -10vh 0px;
+    height: 120vh;
+    width: 200vh;
+    position: fixed;
+    z-index: -1;
+    backdrop-filter: blur(5px);
+}
+
+#create_task button{
+    border: none;
+    outline: none;
+    margin: 10px 0px;
+    border-radius: 4px;
+}
+
+#addsign{
+    color: #00A72B;
+}

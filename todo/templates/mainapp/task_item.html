@@ -1,0 +1,22 @@
+{% load static %}
+<li class="task">
+<a class="openmodal" id="openmodal{{task.id}}">{{task.title}} |
+    {{task.description|truncatewords:10}}
+    <a class="change_starred_state"
+       href="{% url 'change_starred_state' task.pk %}">
+        {% if task.starred %}<img class='star' src="{%static 'staticimages/black_star.png'%}">{%else%}
+        <img class='star' src="{% static 'staticimages/transparent_star.png' %}">
+    </a>{% endif %}
+    <a class='delete'
+       href="{% url 'delete_task' task.pk %}"><img
+            src="{%static 'staticimages/x.png'%}"></a>
+    <br><br>Before: {{task.deadline_time}}
+</a>
+<div id="hiddeninfo{{task.id}}" class="hiddeninfo">
+    <a class="title" value="{{task.title}}"></a>
+    <a class="description" value="{{task.description}}"></a>
+    <a class="starred" value="{{task.starred}}"></a>
+    <a class="deadline_time"
+       value={{task.deadline_time|date:'Y-m-d'}}T{{task.deadline_time|time:'H:i'}}></a>
+</div>
+</li>

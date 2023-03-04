@@ -1,0 +1,73 @@
+{%load static%}
+<script id="loadmorescript">
+function load_js()
+                {
+                var body = $("body");
+                $("#change_task_script").remove();
+
+                var new_script = document.createElement('script');
+                new_script.src= "{%static 'mainapp/javascript/change_task.js'%}";
+                new_script.id = "#change_task_script";
+                body.append(new_script);
+                }
+
+$(document).ready(function(){
+    var href =  window.location.href.split('/');
+    var changeStarredStateButtons = $(".change_starred_state");
+    var currentObjectsQuantity = document.getElementById('task_list').children.length - 1;//due to the fact that the button is also considered a child element, we subtract one
+
+    if (currentObjectsQuantity == {{task_quantity_for_the_filter}}){
+                $('#loadmore').remove();}
+
+    $('#loadmore').on('click',function(){
+    $.ajax({
+        url: "{%url 'load_more'%}",
+        type: 'POST',
+        data:{
+        dataType: 'json',
+            'offset': currentObjectsQuantity,
+            'csrfmiddlewaretoken': '{{csrf_token}}',
+            'page_filter': '{{page_filter}}',
+        },
+        success: function(res){
+
+            var html = "";
+            $.each(res.rendered_templates, function(index,data){
+                html += data;
+            })
+
+            $("#task_list").append(html);
+            $("#task_list").append($('#loadmore'));
+            load_js(); //load the script one more time to include new tasks
+
+            newObjectsQuantity = document.getElementById('task_list').children.length - 1;
+
+            if (newObjectsQuantity >= {{task_quantity_for_the_filter}}){
+                $('#loadmore').remove();}
+            currentObjectsQuantity = newObjectsQuantity;
+
+            var loadExtra = (newObjectsQuantity-8).toString();
+            $("#task_list").attr('loadExtra', loadExtra);
+
+
+            {%if page_filter%}
+            window.location.href = window.location.origin + "{%url 'main' filter=page_filter %}" + loadExtra;
+            {%else%}
+            window.location.href = window.location.origin + "{% url 'search' %}" + "/" + loadExtra;
+            {%endif%}
+        }
+    })
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    })
+
+
+})
+</script>

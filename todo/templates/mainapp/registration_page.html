@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'mainapp/css/registration_page.css'%}">
+</head>
+<body class="login">
+<div id="container">
+    <div id="header">To Do Registration</div>
+    <div class="main" id="main">
+        <div class="content">
+            <div id="content" class="colM">
+                <div id="content-main">
+                    <form id="login-form" action="{%url 'register'%}" method="post">
+                        {%csrf_token%}
+                        {% for field in form %}
+                            <div class="form-row">
+                            {{field.errors}}
+                            {{field.label_tag}}{{field}}
+                            </div>
+                        {%endfor%}
+                        <div class="submit-row">
+                            <input type="submit" value="Register">
+                        </div>
+                    </form>
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

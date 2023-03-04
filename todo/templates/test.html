@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/mainapp/css/style.css">
+    
+    <title>TODO</title>
+    
+</head>
+<body id="body">
+<div class="topnav">
+    <a href="/">Home</a>
+    <a class="logout" href="/logout/">mrart|Logout</a>
+</div>
+<div class="main">
+    <div class="menu">
+        <form method="post" action="/search" class="searchform">
+            <input type="hidden" name="csrfmiddlewaretoken" value="QyhUJqXwHTIPFYdRIT7GNgJlaUj3x3z0RzevsD5bh359FWzGSB8OvrUaqtIA6NT8">
+            <input class='search' type="text" placeholder="Search tasks" value=""
+                   name="searched">
+        </form>
+
+
+        <ul class="menu_list">
+            <li><a class="create_task_btn"><span id="addsign">Create Task +</span></a></li>
+            <li><a href="/all">All tasks | 12</a></li>
+            <li><a href="/starred">Starred | 1</a></li>
+            <li><a href="/deadline_in_seven_days">Deadline in seven days |
+                0</a></li>
+            <li><a href="/late_tasks">Late | 12</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        
+        <div class="display_tasks">
+            <ul class="tasks_list">
+                
+                <li class="task">
+                    <a class="openmodal" id="openmodal14">nzhnznz |
+                        nznznznz
+                        <a class="change_starred_state"
+                           href="/change-starred-state/14?next=/">
+                            
+                            <img class='star' src="/static/staticimages/transparent_star.png">
+                        </a>
+                        <a class='delete' href="/delete-task/14?next=/"><img
+                                src="/static/staticimages/x.png"></a>
+                        <br><br>Before: Sept. 10, 2022, 12:40 p.m.
+                    </a>
+                    <div id="hiddeninfo14" class="hiddeninfo">
+                        <a class="title" value="nzhnznz"></a>
+                        <a class="description" value="nznznznz"></a>
+                        <a class="starred" value="False"></a>
+                        <a class="deadline_time"
+                           value=2022-09-10T12:40></a>
+                    </div>
+                </li>
+                
+                <li class="task">
+                    <a class="openmodal" id="openmodal15">bcbcbc |
+                        bcbcbc
+                        <a class="change_starred_state"
+                           href="/change-starred-state/15?next=/">
+                            
+                            <img class='star' src="/static/staticimages/transparent_star.png">
+                        </a>
+                        <a class='delete' href="/delete-task/15?next=/"><img
+                                src="/static/staticimages/x.png"></a>
+                        <br><br>Before: Sept. 10, 2022, 12:40 p.m.
+                    </a>
+                    <div id="hiddeninfo15" class="hiddeninfo">
+                        <a class="title" value="bcbcbc"></a>
+                        <a class="description" value="bcbcbc"></a>
+                        <a class="starred" value="False"></a>
+                        <a class="deadline_time"
+                           value=2022-09-10T12:40></a>
+                    </div>
+                </li>
+                
+                <li class="task">
+                    <a class="openmodal" id="openmodal13">qwerty |
+                        qwerty
+                        <a class="change_starred_state"
+                           href="/change-starred-state/13?next=/">
+                            
+                            <img class='star' src="/static/staticimages/transparent_star.png">
+                        </a>
+                        <a class='delete' href="/delete-task/13?next=/"><img
+                                src="/static/staticimages/x.png"></a>
+                        <br><br>Before: Sept. 10, 2022, 12:40 p.m.
+                    </a>
+                    <div id="hiddeninfo13" class="hiddeninfo">
+                        <a class="title" value="qwerty"></a>
+                        <a class="description" value="qwerty"></a>
+                        <a class="starred" value="False"></a>
+                        <a class="deadline_time"
+                           value=2022-09-10T12:40></a>
+                    </div>
+                </li>
+                
+                <li class="task">
+                    <a class="openmodal" id="openmodal11">hdhd |
+                        hdhd
+                        <a class="change_starred_state"
+                           href="/change-starred-state/11?next=/">
+                            
+                            <img class='star' src="/static/staticimages/transparent_star.png">
+                        </a>
+                        <a class='delete' href="/delete-task/11?next=/"><img
+                                src="/static/staticimages/x.png"></a>
+                        <br><br>Before: Sept. 10, 2022, 12:31 p.m.
+                    </a>
+                    <div id="hiddeninfo11" class="hiddeninfo">
+                        <a class="title" value="hdhd"></a>
+                        <a class="description" value="hdhd"></a>
+                        <a class="starred" value="False"></a>
+                        <a class="deadline_time"
+                           value=2022-09-10T12:31></a>
+                    </div>
+                </li>
+                
+                <li class="task">
+                    <a class="openmodal" id="openmodal12">;i;i;i;i |
+                        ;i;i;i;i
+                        <a class="change_starred_state"
+                           href="/change-starred-state/12?next=/">
+                            
+                            <img class='star' src="/static/staticimages/transparent_star.png">
+                        </a>
+                        <a class='delete' href="/delete-task/12?next=/"><img
+                                src="/static/staticimages/x.png"></a>
+                        <br><br>Before: Sept. 10, 2022, 12:31 p.m.
+                    </a>
+                    <div id="hiddeninfo12" class="hiddeninfo">
+                        <a class="title" value=";i;i;i;i"></a>
+                        <a class="description" value=";i;i;i;i"></a>
+                        <a class="starred" value="False"></a>
+                        <a class="deadline_time"
+                           value=2022-09-10T12:31></a>
+                    </div>
+                </li>
+                
+                <li class="task">
+                    <a class="openmodal" id="openmodal10">htht |
+                        htht
+                        <a class="change_starred_state"
+                           href="/change-starred-state/10?next=/">
+                            
+                            <img class='star' src="/static/staticimages/transparent_star.png">
+                        </a>
+                        <a class='delete' href="/delete-task/10?next=/"><img
+                                src="/static/staticimages/x.png"></a>
+                        <br><br>Before: Sept. 10, 2022, 12:31 p.m.
+                    </a>
+                    <div id="hiddeninfo10" class="hiddeninfo">
+                        <a class="title" value="htht"></a>
+                        <a class="description" value="htht"></a>
+                        <a class="starred" value="False"></a>
+                        <a class="deadline_time"
+                           value=2022-09-10T12:31></a>
+                    </div>
+                </li>
+                
+                <li class="task">
+                    <a class="openmodal" id="openmodal7">[&#x27;[ |
+                        &#x27;[&#x27;[
+                        <a class="change_starred_state"
+                           href="/change-starred-state/7?next=/">
+                            
+                            <img class='star' src="/static/staticimages/transparent_star.png">
+                        </a>
+                        <a class='delete' href="/delete-task/7?next=/"><img
+                                src="/static/staticimages/x.png"></a>
+                        <br><br>Before: Sept. 4, 2022, 4:14 p.m.
+                    </a>
+                    <div id="hiddeninfo7" class="hiddeninfo">
+                        <a class="title" value="[&#x27;["></a>
+                        <a class="description" value="&#x27;[&#x27;["></a>
+                        <a class="starred" value="False"></a>
+                        <a class="deadline_time"
+                           value=2022-09-04T16:14></a>
+                    </div>
+                </li>
+                
+            </ul>
+            
+            <nav class="page_list">
+                <ul>
+                    
+                    
+                    <li class="page_num page_selected">1</li>
+                    
+                    
+                    
+                    <li class="page_num"><a href="?page=2">2</a></li>
+                    
+                    
+                </ul>
+            </nav>
+            
+        </div>
+        <div class='modal' id="modal">
+            <div class='modal-content'>
+                <form class="change_task" id='change_task_form' method="post" name="change_task_form">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="QyhUJqXwHTIPFYdRIT7GNgJlaUj3x3z0RzevsD5bh359FWzGSB8OvrUaqtIA6NT8">
+                    
+                    
+                    
+                    <label for="id_title">Title:</label><br><input type="text" name="title" class="form-control" maxlength="225" required id="id_title"><br>
+                    
+                    
+                    <label for="id_description">Description:</label><br><textarea name="description" cols="40" rows="6" class="form-control" maxlength="999" id="id_description">
+</textarea><br>
+                    
+                    
+                    <label for="id_deadline_time">Deadline time:</label><br><input type="datetime-local" name="deadline_time" class="form-control" required id="id_deadline_time"><br>
+                    
+                    
+                    <label for="id_starred">Starred:</label><br><input type="checkbox" name="starred" class="form-check-input" id="id_starred"><br>
+                    
+                    
+                    <br><input type="hidden" name="id" id="id_id"><br>
+                    
+                    <button id="closemodal" class="closemodal">Close</button>
+                    <button type="submit" class="savebutton">Save</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="create_task" class="h-100 align-items-center justify-content-center">
+            <div id="create_task_content">
+                <form method="post" name="create_new_task_form" action="/create-task/">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="QyhUJqXwHTIPFYdRIT7GNgJlaUj3x3z0RzevsD5bh359FWzGSB8OvrUaqtIA6NT8">
+                    
+                    
+                    <label for="id_title">Title:</label><br><input type="text" name="title" class="form-control" maxlength="225" required id="id_title"><br>
+                    
+                    
+                    <label for="id_description">Description:</label><br><textarea name="description" cols="40" rows="6" class="form-control" maxlength="999" id="id_description">
+</textarea><br>
+                    
+                    
+                    <label for="id_deadline_time">Deadline time:</label><br><input type="datetime-local" name="deadline_time" class="form-control" required id="id_deadline_time"><br>
+                    
+                    
+                    <label for="id_starred">Starred:</label><br><input type="checkbox" name="starred" class="form-check-input" id="id_starred"><br>
+                    
+                    
+                    <input type="hidden" name="user" id="id_user" value="1">
+                    
+                    <button type="submit">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/mainapp/javascript/change_task.js"></script>
+<script src="/static/mainapp/javascript/create_task.js"></script>
+
+
+<link rel="stylesheet" href="/static/debug_toolbar/css/print.css" media="print">
+<link rel="stylesheet" href="/static/debug_toolbar/css/toolbar.css">
+
+
+<script type="module" src="/static/debug_toolbar/js/toolbar.js" async></script>
+
+<div id="djDebug" class="djdt-hidden" dir="ltr"
+     
+     data-store-id="a7eef0ebb3374e0eb1ee9d7c03e03e3a"
+     data-render-panel-url="/__debug__/render_panel/"
+     
+     
+     
+     data-sidebar-url="/__debug__/history_sidebar/"
+     
+     data-default-show="true"
+     >
+  <div class="djdt-hidden" id="djDebugToolbar">
+    <ul id="djDebugPanelList">
+      <li><a id="djHideToolBarButton" href="#" title="Hide toolbar">Hide »</a></li>
+      
+        
+
+<li id="djdt-HistoryPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtHistoryPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="History" class="HistoryPanel">
+  
+  History
+  
+    
+      <br><small>/</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-VersionsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtVersionsPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Versions" class="VersionsPanel">
+  
+  Versions
+  
+    
+      <br><small>Django 4.1</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-TimerPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtTimerPanel" checked title="Disable for next and successive requests">
+  
+    <div class="djdt-contentless">
+  
+  Time
+  
+    
+      <br><small>Total: 41.92ms</small>
+    
+  
+  
+    </div>
+  
+</li>
+
+      
+        
+
+<li id="djdt-SettingsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtSettingsPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Settings from todo.settings" class="SettingsPanel">
+  
+  Settings
+  
+    
+      
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-HeadersPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtHeadersPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Headers" class="HeadersPanel">
+  
+  Headers
+  
+    
+      
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-RequestPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtRequestPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Request" class="RequestPanel">
+  
+  Request
+  
+    
+      <br><small>index</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-SQLPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtSQLPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="SQL queries from 1 connection" class="SQLPanel">
+  
+  SQL
+  
+    
+      <br><small>11 queries in 2.99ms</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-StaticFilesPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtStaticFilesPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Static files (147 found, 18 used)" class="StaticFilesPanel">
+  
+  Static files
+  
+    
+      <br><small>18 files used</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-TemplatesPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtTemplatesPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Templates (35 rendered)" class="TemplatesPanel">
+  
+  Templates
+  
+    
+      <br><small>mainapp/index.html</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-CachePanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtCachePanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Cache calls from 1 backend" class="CachePanel">
+  
+  Cache
+  
+    
+      <br><small>0 calls in 0.00ms</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-SignalsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtSignalsPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Signals" class="SignalsPanel">
+  
+  Signals
+  
+    
+      <br><small>31 receivers of 15 signals</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-LoggingPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtLoggingPanel" checked title="Disable for next and successive requests">
+  
+    <a href="#" title="Log messages" class="LoggingPanel">
+  
+  Logging
+  
+    
+      <br><small>0 messages</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-RedirectsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtRedirectsPanel" title="Enable for next and successive requests">
+  
+    <div class="djdt-contentless djdt-disabled">
+  
+  Intercept redirects
+  
+  
+    </div>
+  
+</li>
+
+      
+        
+
+<li id="djdt-ProfilingPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtProfilingPanel" title="Enable for next and successive requests">
+  
+    <div class="djdt-contentless djdt-disabled">
+  
+  Profiling
+  
+  
+    </div>
+  
+</li>
+
+      
+    </ul>
+  </div>
+  <div class="djdt-hidden" id="djDebugToolbarHandle">
+    <div title="Show toolbar" id="djShowToolBarButton">
+      <span id="djShowToolBarD">D</span><span id="djShowToolBarJ">J</span>DT
+    </div>
+  </div>
+
+  
+    
+
+
+  <div id="HistoryPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>History</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="VersionsPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Versions</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+
+  
+    
+
+
+  <div id="SettingsPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Settings from todo.settings</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="HeadersPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Headers</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="RequestPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Request</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="SQLPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>SQL queries from 1 connection</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="StaticFilesPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Static files (147 found, 18 used)</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="TemplatesPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Templates (35 rendered)</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="CachePanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Cache calls from 1 backend</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="SignalsPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Signals</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="LoggingPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Log messages</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+
+  
+    
+
+
+
+  
+  <div id="djDebugWindow" class="djdt-panelContent djdt-hidden"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="create_task_content">
+    <form method="post" name="create_new_task_form" action="{%url 'create_task'%}">
+        {%csrf_token%}
+        {% for field in menu.create_task_form.visible_fields %}
+        {{field.errors}}
+        {{field.label_tag}}<br>{{field}}<br>
+        {%endfor%}
+        {%for field in menu.create_task_form.hidden_fields%}
+        <input type="hidden" name="user" id="id_user" value="{{request.user.usermodel.pk}}">
+        {%endfor%}
+        <button type="submit">Create</button>
+    </form>
+</div>
