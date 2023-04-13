@@ -7,6 +7,5 @@ runtime.txt
 *.sqlite3
 db.sqlite3
 *.pyc
-.pyc
-*pyc
-__pycache__
+*.pyc[cod]
+/__pycache__/
