@@ -9,3 +9,5 @@ db.sqlite3
 *.pyc
 *.pyc[cod]
 /__pycache__/
+.venv
+db.sqlite3
