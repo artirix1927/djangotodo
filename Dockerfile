@@ -1,23 +1,30 @@
-FROM python:3.12-slim
+FROM python:3.12-alpine
 
-# Set the working directory for the shop app
-WORKDIR /todo/mainapp
+# Set the working directory
+WORKDIR /app
 
-# Install required system dependencies
-RUN apt-get update && apt-get install -y \
+# Install system dependencies
+RUN apk add --no-cache \
     gcc \
     libffi-dev \
-    && apt-get clean
+    musl-dev \
+    python3-dev \
+    && rm -rf /var/cache/apk/*
 
-# Copy the requirements file and install dependencies
+# Copy and install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir gunicorn \
+    && pip install --no-cache-dir -r requirements.txt
 
-# Copy the shop source code
+# Copy the Django project files
 COPY . .
 
-# Expose the port for the shop app
+
+RUN cd todo && python manage.py collectstatic --noinput && python manage.py migrate --noinput
+
+
+# Expose the port for the Django app
 EXPOSE 8000
 
-CMD ["python", "manage.py runserver localhost:8000"]
-
+# Run Gunicorn with two workers
+CMD ["gunicorn","--chdir","/app/todo/", "--bind", "0.0.0.0:8000", "--workers", "2", "todo.wsgi:application"]
