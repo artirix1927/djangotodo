@@ -22,7 +22,6 @@ COPY . .
 
 RUN cd todo && python manage.py collectstatic --noinput && python manage.py migrate --noinput
 
-
 # Expose the port for the Django app
 EXPOSE 8000
 
