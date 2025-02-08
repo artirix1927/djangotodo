@@ -1,6 +1,6 @@
 {% load static %}
-<li class="task">
-<a class="openmodal" id="openmodal{{task.id}}">{{task.title}} |
+<li class="task openmodal" id="openmodal{{task.id}}">
+<a >{{task.title}} |
     {{task.description|truncatewords:10}}
     <a class="change_starred_state"
        href="{% url 'change_starred_state' task.pk %}">
