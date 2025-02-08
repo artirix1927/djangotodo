@@ -36,7 +36,8 @@ def search_task(request, load_extra=0):
         # Make it so after changing task from modal window after searching you still have your searched tasks
         request.session['last_searched'] = request.POST['searched']
 
-    tasks_to_display = get_searched_tasks(request, request.session['last_searched'])
+    tasks_to_display = get_searched_tasks(
+        request, request.session['last_searched'])
     content['tasks'] = tasks_to_display[:tasks_fit_without_overflow + load_extra]
     content['task_quantity_for_the_filter'] = tasks_to_display.count()
 
@@ -88,7 +89,7 @@ def create_new_task(request):
 
 class LoginPage(LoginView):
     form_class = AuthenticationForm
-    template_name = 'admin/login.html'
+    template_name = 'mainapp/login.html'
 
     def get_success_url(self):
         return reverse_lazy('redirect-to-main')

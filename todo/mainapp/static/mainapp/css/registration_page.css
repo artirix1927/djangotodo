@@ -2,7 +2,7 @@ body{
 background-color: #212121;
 height: auto;
 font-size: 0.875rem;
-font-family: 'Arial';
+font-family: var(--font-family-primary);
 }
 
 form {
