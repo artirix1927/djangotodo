@@ -6,7 +6,11 @@
 {{ form.media }}
 {% endblock %}
 
-{% block bodyclass %}{{ block.super }} login{% endblock %}
+{%block branding%}
+<div id="site-name"><h1 id="site-name">Todo Login</h1></div>
+{%endblock%}
+
+{% block bodyclass %}{{ block.super }} login {% endblock %}
 
 {% block usertools %}{% endblock %}
 
