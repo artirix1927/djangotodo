@@ -1,11 +1,7 @@
-body,
-html {
+html, body {
     height: 100%;
-}
-
-body {
     margin: 0;
-    overflow: visible;
+    overflow: hidden;
     background-image: url("/static/staticimages/bg4.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -25,27 +21,26 @@ h1 {
     color: blue;
 }
 
-.main{
+.main {
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
 }
 
 /*** Top navbar ***/
 .topnav {
     background-color: #4e7c90;
-    /* overflow: hidden;  */
     width: 100%;
     height: 54px;
     display: flex;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 99999;
 }
 
 .topnav a {
     float: left;
     color: #f2f2f2;
-    /* text-align: center; */
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -67,13 +62,23 @@ h1 {
     color: white;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 /*** Left menu ***/
 .menu {
-    /* float: left; */
+    position: fixed;
     background-color: #d5d5d5;
-    height: 100vh;
-    /* position: fixed; */
-    min-width: fit-content;
+    top: 54px; /* Offset by the height of the topnav */
+    left: 0;
+    width: fit-content;
+    height: calc(100vh - 54px); /* Ensure the menu takes up full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 9999;
+    overflow-y: auto;
 }
 
 .menu_list {
@@ -87,7 +92,7 @@ h1 {
 
 .search {
     width: 70%;
-    min-width:80px;
+    min-width: 80px;
     padding: 6px;
     border: none;
     font-size: 16px;
@@ -97,12 +102,12 @@ h1 {
 }
 
 .searchimg {
-    display:flex;
-    border:none;
+    display: flex;
+    border: none;
     background-color: transparent;
     -webkit-transform: scale(0.3, 0.3);
-    width:10px;
-    height:10px;
+    width: 10px;
+    height: 10px;
     display: inline;
     padding: 22px 0px;
 }
@@ -117,36 +122,35 @@ h1 {
 .content {
     display: flex;
     flex-direction: row;
-    flex-basis: 100%;
+    flex-grow: 1;
     margin-top: 54px;
 }
 
 .tasks_list {
-    height: 100%;
-    overflow-y: scroll;
-    padding: 0px 0px;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 54px);
 }
 
-.tasks_list::-webkit-scrollbar{
+.tasks_list::-webkit-scrollbar {
     display: none;
 }
 
 .display_tasks {
     flex-grow: 2;
-    min-width:400px;
+    min-width: 400px;
     padding: 0px 0%;
     z-index: 4;
 }
 
 .tasks_list li {
     list-style-type: none;
-    padding: 18px 40px 18px 40px;
+    padding: 18px 40px;
     background: #eeeeee;
     font-size: 16px;
     border-bottom: 2px solid grey;
-    /* height:108px;
-    width: 1200px; */
-    min-width:200px;
+    min-width: 200px;
 }
 
 /* Darker background-color on hover */
@@ -154,11 +158,11 @@ h1 {
     background: #dddddd;
 }
 
-#loadmore{
-width:100%;
-height: 36px;
-background-color:grey;
-border:none;
+#loadmore {
+    width: 100%;
+    height: 36px;
+    background-color: grey;
+    border: none;
 }
 
 .change_starred_state {
@@ -179,33 +183,38 @@ border:none;
     margin-top: 50px;
 }
 
+/*** Modal Styling ***/
 .modal {
     background-color: #d5d5d5;
-    float: right;
-    position: relative; /*or fixed*/
     max-width: 562px;
-    z-index: 4;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    right: 0 !important;
+    left: auto;
+    width: 33%;
+    max-height: 100%;
+    
+
 }
 
-.modal-content{
+.modal-content {
     background-color: #d5d5d5;
     border: none;
-    padding: 20px 60px;
-    position: fixed;
-    max-width: 560px;
+    padding: 2% 10%;
 }
 
-.change_task{
+.change_task {
     display: inline-block;
 }
 
-.hiddeninfo{
+.hiddeninfo {
     display: none;
 }
 
-.savebutton{
+.savebutton {
     border-radius: 4px;
-    border:none;
+    border: none;
     width: 60px;
     height: 26px;
     background-color: #02B865;
@@ -214,9 +223,9 @@ border:none;
     float: right;
 }
 
-.closemodal{
+.closemodal {
     border-radius: 4px;
-    border:none;
+    border: none;
     width: 60px;
     height: 26px;
     background-color: #FF0734;
@@ -231,15 +240,15 @@ border:none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius:4px;
+    border-radius: 4px;
     padding: 10px 40px;
     background-color: #d5d5d5;
-    max-height:60%;
+    max-height: 60%;
     border: 1px solid grey;
-    z-index:120;
+    z-index: 120;
 }
 
-#close_create_task_window{
+#close_create_task_window {
     margin: -10vh 0px;
     height: 120vh;
     width: 200vh;
@@ -248,13 +257,42 @@ border:none;
     backdrop-filter: blur(5px);
 }
 
-#create_task button{
+#create_task button {
     border: none;
     outline: none;
     margin: 10px 0px;
     border-radius: 4px;
 }
 
-#addsign{
+#addsign {
     color: #00A72B;
+}
+
+/* Hide the menu on small screens */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: fixed;
+        top: 54px;
+        left: 0;
+        width: fit-content;
+        height: calc(100vh - 54px);
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .modal {
+        width: 75%;
+    }
+}
+
+/* Show the menu when it's toggled */
+.menu.show {
+    display: flex;
 }
