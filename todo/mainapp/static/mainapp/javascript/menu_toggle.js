@@ -1,5 +1,6 @@
 document.getElementById('menu-toggle').addEventListener('click', function() {
     const menu = document.querySelector('.menu');
+    window.CloseAllModalWindows()
     menu.classList.toggle('show');
 });
 

@@ -35,9 +35,16 @@ function GetTaskInfo(button_id){
     return task_info;
 }
 
-for (let item of windows) {
-CloseWindow(item);
-};
+
+function CloseAllModalWindows(){
+    for (let item of windows) {
+        CloseWindow(item);
+    };
+}
+
+window.CloseAllModalWindows = CloseAllModalWindows;
+
+CloseAllModalWindows()
 
 
 if (open_buttons.length > 0){
